@@ -1,15 +1,19 @@
-# Multi-Crypto Multi-Algo Trading Bot v0.1
+# MCMA - Multi-Crypto Multi-Algo Trading Bot v0.1
 
-MCMA - Trading Bot v0.1
+```
+ ███╗   ███╗ ██████╗███╗   ███╗ █████╗ 
+ ████╗ ████║██╔════╝████╗ ████║██╔══██╗
+ ██╔████╔██║██║     ██╔████╔██║███████║
+ ██║╚██╔╝██║██║     ██║╚██╔╝██║██╔══██║
+ ██║ ╚═╝ ██║╚██████╗██║ ╚═╝ ██║██║  ██║
+ ╚═╝     ╚═╝ ╚═════╝╚═╝     ╚═╝╚═╝  ╚═╝
+```
 
-███    ███  ██████  ███    ███  █████
-████  ████ ██       ████  ████ ██   ██ 
-██ ████ ██ ██       ██ ████ ██ ███████ 
-██  ██  ██ ██       ██  ██  ██ ██   ██ 
-██      ██  ██████  ██      ██ ██   ██ 
+**Automated cryptocurrency trading bot with multiple technical analysis algorithms, real-time monitoring, and backtesting capabilities for Hyperliquid exchange.**
 
-
-Automated cryptocurrency trading bot with multiple technical analysis algorithms, real-time monitoring, and backtesting capabilities for Hyperliquid exchange.
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
+[![GitHub](https://img.shields.io/badge/GitHub-MCMA-green)](https://github.com/aiwebarchitects/MCMA)
 
 ## Features
 
