@@ -57,12 +57,14 @@
 1. Clone the repository:
 ```bash
 git clone https://github.com/aiwebarchitects/MCMA.git
-cd MCMA
+cd multi_crypto_multi_algo_trading_bot_0.1
 ```
 
 2. Install dependencies:
 ```bash
 pip install -r requirements.txt
+# OR if pip doesn't work, try:
+pip3 install -r requirements.txt
 ```
 
 3. Set up Hyperliquid account:
@@ -73,7 +75,7 @@ pip install -r requirements.txt
 4. Configure API credentials:
 
 **Option 1: Use the Settings Panel (Recommended)**
-- Launch the panel: `python trading_panel.py`
+- Launch the panel: `python trading_panel.py` (or `python3 trading_panel.py`)
 - Navigate to "API Settings" page
 - Enter your secret key and account address
 - Click "Save Settings"
@@ -92,6 +94,8 @@ Edit `config/api_config.json`:
 **Launch the trading panel:**
 ```bash
 python trading_panel.py
+# OR if python doesn't work, try:
+python3 trading_panel.py
 ```
 
 The panel will start in monitoring mode. Click "START BOT" to begin automated trading.
@@ -211,31 +215,80 @@ Results are saved in `results/` directory as JSON files.
 
 ```
 multi_crypto_multi_algo_trading_bot_0.1/
-├── trading_panel.py              # Main entry point
+├── trading_panel.py              # Main entry point - GUI application
+├── requirements.txt              # Python dependencies
+├── how_to_add_new_signals.md     # Guide for adding new signals
+├── DEV_PLAN.md                   # Development roadmap
+├── whats_next_todo.md            # Future improvements
+├── position_states.json          # Position state persistence
 ├── config/                       # Configuration files
+│   ├── __init__.py
 │   ├── trading_settings.py       # Trading parameters
 │   ├── signal_settings.py        # Signal enable/disable
 │   ├── system_settings.py        # System configuration
-│   └── api_config.json           # API credentials
+│   ├── backtest_settings.py      # Backtesting parameters
+│   ├── debug_settings.py         # Debug configuration
+│   └── api_config.json           # API credentials (create this)
 ├── core/                         # Core components
+│   ├── __init__.py
 │   ├── trading_bot.py            # Main bot orchestrator
 │   └── signal.py                 # Signal data structure
 ├── signals/                      # Signal generators
-│   ├── rsi_1min.py
-│   ├── rsi_5min.py
-│   ├── sma_5min.py
-│   └── ...
+│   ├── __init__.py
+│   ├── rsi_1min.py               # RSI 1-minute signal
+│   ├── rsi_5min.py               # RSI 5-minute signal
+│   ├── rsi_1h.py                 # RSI 1-hour signal
+│   ├── rsi_4h.py                 # RSI 4-hour signal
+│   ├── sma_5min.py               # SMA 5-minute signal
+│   ├── macd_15min.py             # MACD 15-minute signal
+│   ├── scalping_1min.py          # Scalping 1-minute signal
+│   ├── range_24h_low.py          # 24-hour low range signal
+│   └── range_7days_low.py        # 7-day low range signal
 ├── managers/                     # Order and position management
+│   ├── __init__.py
 │   ├── order_manager.py          # Order execution
 │   └── position_manager.py       # Position monitoring
 ├── panel_modules/                # UI components
-│   ├── pages/                    # Panel pages
-│   └── ...
+│   ├── __init__.py
+│   ├── header.py                 # Panel header
+│   ├── navigation.py             # Navigation menu
+│   ├── signals_display.py        # Signals display
+│   ├── positions.py              # Positions display
+│   ├── position_monitor.py       # Position monitoring
+│   ├── orders.py                 # Orders display
+│   ├── price_fetcher.py          # Price data fetcher
+│   ├── coingecko_price_fetcher.py # CoinGecko integration
+│   ├── api_utils.py              # API utilities
+│   └── pages/                    # Panel pages
+│       ├── __init__.py
+│       ├── home_page.py          # Home/activity page
+│       ├── settings_page.py      # Settings page
+│       ├── api_settings_page.py  # API settings page
+│       ├── backtest_page.py      # Backtesting page
+│       └── debug_page.py         # Debug page
 ├── utils/                        # Utilities
+│   ├── __init__.py
 │   ├── api_client.py             # Exchange API wrapper
-│   └── logger.py                 # Logging utilities
-├── results/                      # Backtest results
-└── logs/                         # Log files
+│   ├── logger.py                 # Logging utilities
+│   └── backtest_results_loader.py # Backtest results loader
+├── integrate/                    # Integration tests
+│   ├── test_coin_specific_rsi_1min.py
+│   ├── test_sky_range_24h_low.py
+│   ├── test_sky_range_72h_low.py
+│   └── ...
+├── changes_made/                 # Development changelog
+│   ├── CHANGELOG.md
+│   ├── CHANGELOG_20251026.md
+│   ├── BACKTEST_FIXES_20251026.md
+│   ├── COIN_SPECIFIC_PARAMETERS.md
+│   ├── MACD_INTEGRATION_SUMMARY.md
+│   ├── SCALPING_SIGNAL_INTEGRATION.md
+│   └── ...
+├── results/                      # Backtest results (JSON files)
+├── logs/                         # Log files
+│   ├── trading_bot.log           # Main bot log
+│   └── signals_log.txt           # Signals log
+└── old/                          # Archived/deprecated code
 ```
 
 ## Risk Management
@@ -328,6 +381,8 @@ Positions are monitored every 3 seconds for:
 Run individual signal generators:
 ```bash
 python -c "from signals.rsi_5min import RSI5MinSignalGenerator; gen = RSI5MinSignalGenerator(); print(gen.generate_signal('BTC'))"
+# OR if python doesn't work, try:
+python3 -c "from signals.rsi_5min import RSI5MinSignalGenerator; gen = RSI5MinSignalGenerator(); print(gen.generate_signal('BTC'))"
 ```
 
 ### Contributing
