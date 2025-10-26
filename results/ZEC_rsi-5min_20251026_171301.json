@@ -1,0 +1,22 @@
+{
+  "coin": "ZEC",
+  "signal": "rsi-5min",
+  "timestamp": "20251026_171301",
+  "backtest_date": "2025-10-26T17:13:01.252675",
+  "timerange": "24 Hours",
+  "position_size_usd": 100.0,
+  "best_parameters": {
+    "period": 14,
+    "oversold": 35,
+    "overbought": 75
+  },
+  "performance": {
+    "total_profit_usd": 34.67154269884676,
+    "total_trades": 17,
+    "winning_trades": 15,
+    "losing_trades": 2,
+    "win_rate": 88.23529411764706,
+    "avg_profit": 2.039502511696868,
+    "signals_generated": 195
+  }
+}

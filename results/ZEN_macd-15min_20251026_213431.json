@@ -1,0 +1,22 @@
+{
+  "coin": "ZEN",
+  "signal": "macd-15min",
+  "timestamp": "20251026_213431",
+  "backtest_date": "2025-10-26T21:34:31.624814",
+  "timerange": "24 Hours",
+  "position_size_usd": 100.0,
+  "best_parameters": {
+    "period": 8,
+    "oversold": 20,
+    "overbought": 8
+  },
+  "performance": {
+    "total_profit_usd": 18.891703211175376,
+    "total_trades": 4,
+    "winning_trades": 3,
+    "losing_trades": 1,
+    "win_rate": 75.0,
+    "avg_profit": 4.722925802793844,
+    "signals_generated": 8
+  }
+}
