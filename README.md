@@ -57,7 +57,7 @@
 1. Clone the repository:
 ```bash
 git clone https://github.com/aiwebarchitects/MCMA.git
-cd multi_crypto_multi_algo_trading_bot_0.1
+cd MCMA
 ```
 
 2. Install dependencies:
@@ -214,7 +214,7 @@ Results are saved in `results/` directory as JSON files.
 ## Project Structure
 
 ```
-multi_crypto_multi_algo_trading_bot_0.1/
+MCMA/
 ├── trading_panel.py              # Main entry point - GUI application
 ├── requirements.txt              # Python dependencies
 ├── how_to_add_new_signals.md     # Guide for adding new signals
